@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'MyFont';
+  src: local('MyFont'), url(./fonts/ShareTech-Regular.ttf) format('truetype');
+}
+
+
+
+.header {
+  background-color: #23df55;
+  color: #cf9260;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'MyFont';
+  font-size: large;
+  margin-top: 0px;
+  
+}
+
+.header h1 {
+  margin: 0;
+  margin-right: 15px;
+}
+
+#secure-container {
+  text-align: center;
+  background-color: #d4cccc;
+  background: linear-gradient(to bottom, #ed2828, #f6f6f6);
+  height:100vh;
+  position: relative;
+  font-family: 'MyFont';
+  overflow: hidden;
+  font-size: x-large;
+}
+
+#secure-title {
+  color: #274e08;
+}
+
+#secure-subtitle {
+  color: #666;
+}
+
+
+#home-container {
+  text-align: center;
+  padding: 10px;
+  background-color: #c1edb5;
+  height: 100vh;
+  position: relative;
+  font-family: 'MyFont';
+  overflow: hidden;
+}
+
+#home-container h1 {
+  font-family: 'MyFont';
+  color: #0e5c3b;
+}
+
+#home-container div {
+  color: #228b22;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: #ff0000; 
+  margin-top: 10px;
+}
+
+.download-link {
+  margin-left: 13px;
+  color: #022a11;
+  text-decoration: none;
+  font-size:20px;
+  font-weight: 22px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  margin-top: 23px; 
+  margin-bottom: 20px; 
+  display: block;
+}
+
+.download-link:hover {
+  color:#ff0909
+}
+
+.pickle-form {
+  border: none;
+  margin-top: 20px;
+}
+
+.submit-button{
+  font-family: 'MyFont';
+}
+
+.results-container {
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9; 
+  border-radius: 10px;
+  margin-top: 20px; 
+}
+
+.results-container h2 {
+  font-family: 'MyFont';
+  color: #0e5c3b;
+  margin-top: 0;
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+}
+
+.results-list li {
+  margin-bottom: 10px;
+  color: #228b22;
+  font-size: 18px;
+}
+
+.results-list li:first-child {
+  margin-top: 0;
+}

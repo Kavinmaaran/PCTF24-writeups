@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+        <title>DEMO TIMECAPSULE</title>
+	</head>
+<body>
+    <button class="cv_btn" style="position: absolute;top: 0;right: 0; margin: 12px;"
+    onclick="window.location.href = '/notices';"> 
+    🔔
+    </button>
+    <div class="form-container">
+    <div class="mockform">
+    <div style="font-size: 48px;">ONLINE TIMECAPSULE DEMO</div><br><br>
+    <div>Welcome to online timecapsule demo</div>
+    <div>People can store an instance of their favourite websites and only view them after a date inputted to see how much it changed</div>
+    <br>
+    <br>
+    <button class="cv_btn" 
+    onclick="window.location.href = '/signupform';"> 
+        Signup
+    </button>
+    <br>
+    <br>
+    <button class="cv_btn" 
+    onclick="window.location.href = '/userloginform';"> 
+        User Login
+    </button>
+    <br>
+    <br>
+    <button class="cv_btn"
+	onclick="admin()"> 
+		Admin Login
+	</button>
+    </div>
+    </div>
+
+</body>
+<script>
+        const admin = async () => {
+            // e.preventDefault();
+            await fetch ('/admincheck', {
+                method : 'POST',
+                credentials: "same-origin",
+                headers: {'Content-Type': "application/json"},
+            })
+            .then (response => {
+				window.location.replace("/adminlogin")
+			})
+        }
+</script>
+</html>

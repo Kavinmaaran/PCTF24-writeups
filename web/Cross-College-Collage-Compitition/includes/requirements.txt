@@ -1,0 +1,12 @@
+beautifulsoup4
+bs4
+lxml==4.6.3
+flask
+gunicorn
+requests
+urllib3
+pillow
+Werkzeug
+python-magic
+selenium
+flask-limiter

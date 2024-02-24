@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Collage Creater</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    
+
+    <div class="form-container">
+	<div class="mockform">
+        <form action="/review" method="POST" class="htmlinput">
+            <h1 style="text-align: center">Submit HTML</h1>
+            <br>
+            <div>
+            <textarea rows="28" cols="40" class="txtarea" name="content" id="content"></textarea>
+            </div>
+            <br>
+            <br>
+            <div>
+            <input type="submit" id="submitbtn" class="cv_btn" style="border-color: black; color: black;" value="Search">
+            </div>
+        </form>
+        
+    </div>
+    </div>
+    
+</div>
+
+{% endblock %}

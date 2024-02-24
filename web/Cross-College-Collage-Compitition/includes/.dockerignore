@@ -1,0 +1,6 @@
+__pycache__/
+.git/
+Dockerfile
+docker-compose.yml
+.env
+.env.example

@@ -1,0 +1,6 @@
+#Env for docker
+.env
+frontend/src/config/config.js
+backend/config.py
+
+backend/__pycache__/

@@ -1,0 +1,5 @@
+Alice gets fired but her company has not paid her gratuity yet. Her CEO used to deposit employees' gratuity in an separate account every month but he fled the country before revealing the account password. From a data breach, the service that the CEO used to encrypt and store the password on his laptop was found. Decrypt the password and help Alice get her gratuity.
+>PASSWORD =  3241bb91577091d488a49e81fe6332a6c2580a3241d1289f9e03b0ef02e1bb2b
+
+Feel free to read today's newspaper if you are bored while bruteforcing :)
+Note: submit the flag in the format p_ctf{PASSWORD}

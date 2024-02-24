@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+		<title>DEMO TIMECAPSULE</title>
+	</head>
+	<body>
+		<div class="form-container">
+		<div class="mockform">
+		<h1 style="text-align: center;">Submit</h1>
+
+			<form action="javascript:register()" method="POST">
+				<label form="message">Url:</label>
+				<input type="text" id="message_text" name="message_text" maxlength="41" required><br><br>
+
+				<label form="view_date">Date:</label>
+				<input type="date" id="view_date" name="view_date" required><br><br>
+
+				<button type="submit" class=cv_btn>Submit</button>
+			</form>
+			<br>
+			<button>Leave</button>
+			<br>
+			<br>
+			<div class="content" id="content">
+				Status: {{ message }}
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

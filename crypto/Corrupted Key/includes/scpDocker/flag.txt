@@ -1,0 +1,1 @@
+p_ctf{some_random_flag_that_works}

@@ -1,0 +1,4 @@
+Rumors have been going on about a series of compromises being added to the newly released demo version of Time-capsule,
+an app by Recorp one of the largest software companies in the world.
+They say a double agent from a rival company set up hidden compromises that when viewed almost mimic the real one along with other vulnerabilities present in the app.
+You have been hired by Recorp to verify if these rumors are true, and get back to the admin user about any necessary changes.

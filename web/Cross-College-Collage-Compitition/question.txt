@@ -1,0 +1,2 @@
+You have been selected to participate in the Cross College Collage Competition. Participants will submit HTML source code and the program will clean and pick out the image sources and create a beautiful collage of all the JPEG images in the the source.
+You will view the generated collage after submission, the judge will also receive a copy of your collage. Try your best and maybe uncover some secrets on the way.

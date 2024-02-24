@@ -1,0 +1,10 @@
+flask
+PyJWT
+SQLAlchemy==1.2.17
+flask_sqlalchemy
+requests
+mysql-connector-python
+mysqlclient
+validators
+gunicorn
+urlpath

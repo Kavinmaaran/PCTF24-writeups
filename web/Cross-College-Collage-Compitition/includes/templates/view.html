@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Collage Creater</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div style="margin: auto; width:25rem; text-align: center;"><h2>View Collage</h2></div>
+    <ul class="image-gallery" style="list-style-type: none; margin-bottom: 74px;">
+    {% for imgsrc in images.images %}
+        <li>
+            <img src={{ imgsrc }}>
+        </li>
+    {% endfor %}
+    </ul>
+    {{ main_images.images[0] | safe }} 
+    <div class="footer">
+        <button id="leave" class="cv_btn" onclick="window.location.href = '/';">Home</button>
+    </div>
+</body>
+<!--Credits
+    bs:4.12.2
+    lxml:4.6.3
+    urllib:1.26.5
+    flask:2.0.1
+    PIL:8.2.0
+    magic:0.4.22-->
+</html>

@@ -1,0 +1,5 @@
+The flag is very well hidden but you can find it as long as you listen to my clues carefully. Now, I shall give you the first clue.
+A plaintext is encrypted using AES-128 in CBC mode. 
+  > plaintext = "there aren't any RED herrings in this challenge. Do IT carefully."
+Modify the IV so that the same ciphertext now decrypts to 
+  > "sadly, there are RED herrings in this challenge. Do IT carefully."

@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+
+
+
+
+@font-face {
+  font-family: 'MyFont';
+  src: local('MyFont'), url(./fonts/ShareTech-Regular.ttf) format('truetype');
+}
+
+
+
+.header {
+  background-color: #edbaba;
+  color: #cf9260;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'MyFont';
+  font-size: large;
+  
+}
+
+.header h1 {
+  margin: 0;
+  margin-right: 15px;
+}
+
+/* Secure component styles */
+#secure-container {
+  text-align: center;
+  background-color: #d4cccc;
+  background: linear-gradient(to bottom, #ed2828, #f6f6f6);
+  height:100vh;
+  position: relative;
+  font-family: 'MyFont';
+  overflow: hidden;
+  font-size: x-large;
+}
+
+#secure-title {
+  color: #274e08;
+}
+
+#secure-subtitle {
+  color: #666;
+}
+
+
+#home-container {
+  text-align: center;
+  padding: 10px;
+  background-color: #edbeb5;
+  height: 100vh;
+  position: relative;
+  font-family: 'MyFont';
+  overflow: hidden;
+}
+
+#home-container h1 {
+  font-family: 'MyFont';
+  color: #c70039;
+}
+
+#home-container div {
+  color: #228b22;
+  font-size: 25px;
+  margin-top: 10px;
+}
+#home-container p {
+  margin-top: 24px;
+  font-size: 25px;
+}
+
+
+
+@keyframes snowfall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+.snowflake {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: snowfall linear infinite;
+}
+
+
+

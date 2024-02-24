@@ -1,0 +1,54 @@
+version: '3.3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    ports:
+      - ${WEBPORT}:5000
+    environment:
+      DB_HOST: ${DATABASESERVICE}
+      DB_NAME: ${MSQL_DATABASE}
+      DB_USER: ${MSQL_USER}
+      DB_PASSWORD: ${MSQL_PASSWORD}
+      ROMYSQL_PASSWORD: ${ROMSQL_PASSWORD}
+      ROMYSQL_USER: ${ROMSQL_USER}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
+    volumes:
+      - file1:/application/webserver/files
+    # depends_on:
+    #   db:
+    #     condition: service_healthy
+        
+  db:
+    image: mariadb:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    environment:
+      MYSQL_DATABASE: ${MSQL_DATABASE}
+      MYSQL_USER: ${MSQL_USER}
+      MYSQL_PASSWORD: ${MSQL_PASSWORD}
+      ROMYSQL_PASSWORD: ${ROMSQL_PASSWORD}
+      ROMYSQL_USER: ${ROMSQL_USER}
+      MYSQL_ROOT_PASSWORD: ${MSQL_ROOT_PASSWORD}
+    # healthcheck:
+    #   interval: 5s
+    #   retries: 5
+    #   test:
+    #     [
+    #       "CMD",
+    #       "healthcheck.sh",
+    #       "--su-mysql",
+    #       "--connect",
+    #       "--innodb_initialized"
+    #     ]
+    #   timeout: 10s
+    volumes:
+       - mysql-data:/var/lib/mysql
+    ports:
+      - ${DATABASEPORT}:3306
+volumes:
+  mysql-data:
+  file1:

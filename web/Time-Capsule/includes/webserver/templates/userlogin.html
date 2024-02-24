@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+		<title>DEMO TIMECAPSULE</title>
+	</head>
+	<body>
+		<div class="form-container">
+		<div class="mockform">
+			<h1 style="text-align: center;">User Login</h1>
+
+			<form action="javascript:register()" method="POST">
+				<label form="usrname">Username:</label>
+				<input type="text" id="usrname" name="usrname" maxlength="41" required><br><br>
+
+				<label form="pass">Password:</label>
+				<input type="password" id="pass" name="pass" required><br><br>
+
+				<button type="submit" class=cv_btn onclick='document.getElementById("status").innerHTML = "Status:"'>Submit</button>
+				
+
+			</form>
+			<br>
+			<button id="leave" class="cv_btn" onclick="window.location.href = '/';">Leave</button>
+			<br>
+			<br>
+			<div id="status">Status:</div>
+		</div>
+		</div>
+	</body>
+    <script>
+        const register = async () => {
+            // e.preventDefault();
+            const usrname = document.getElementById("usrname").value;
+            const pass = document.getElementById("pass").value;
+            await fetch ('/userlogin', {
+                method : 'POST',
+                headers: {'Content-Type': "application/json"},
+                body: JSON.stringify({username:usrname,password:pass})
+            })
+            .then (response => {
+				if (response.status == 201){
+					document.getElementById('status').innerHTML = 'Status:Success'
+					window.location.replace("/userpanel")
+				} else if (response.status == 401) {
+					document.getElementById('status').innerHTML = 'Status:Invalid Username'
+				}else if (response.status == 403) {
+					document.getElementById('status').innerHTML = 'Status:Invalid Password'
+				}else {
+					document.getElementById('status').innerHTML = 'Status:Failure'
+				};
+			})
+        }
+    </script>
+</html>

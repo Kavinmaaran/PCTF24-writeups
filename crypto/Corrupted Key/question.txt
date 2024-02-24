@@ -1,0 +1,4 @@
+Alice stores her flag in a file stored on her server. She uses the following command to copy flag.txt to her host but the ssh key got corrupted.  
+    scp -i private.pem alice@<DOMAIN>:/flag.txt flag.txt
+
+The corrupted private key is given in openssl_dump.txt 

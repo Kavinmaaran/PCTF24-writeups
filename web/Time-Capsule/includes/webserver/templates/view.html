@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+        <title>DEMO TIMECAPSULE</title>
+	</head>
+<body>
+    <div class="form-container">
+    <div class="mockform">
+        <h1 style="text-align: center;">User View</h1>
+    <form action="javascript:register()" method="POST">
+        <label form="message_tosearch">Id:</label>
+        <input type="text" id="message_tosearch" name="message_tosearch" maxlength="10"><br><br>
+
+        <button type="submit" class=cv_btn id="sbmt">Submit</button>
+        <button class=cv_btn id="showids" onclick="change()">Showids</button>
+
+    </form>
+    <br>
+    <br>
+    <div id="appear"></div>
+    {% for id in ids %}
+        <div class="id" id="id">
+            {{id.id}}
+        </div>
+    {% endfor %}
+    <div id="content" >
+        Message:{{ content }}
+    </div>
+    <br>
+    <button id="leave" class="cv_btn" onclick="window.location.href = '/userpanel';">Leave</button>
+    <br>
+    <br>
+    <div>DEMO:Only 100 Characters will be visible</div>
+    </div>
+    </div>
+</body>
+<script>
+    function change(value){
+        document.getElementById("message_tosearch").value = null
+        document.getElementById("appear").innerHTML = "Available List of Ids:"
+        document.getElementById("content").innerHTML = "Message:"
+        javascript:register()
+    }
+    const register = async () => {
+            // e.preventDefault();
+            const message_tosearch = document.getElementById("message_tosearch").value;
+            await fetch ('/viewnew', {
+                method : 'POST',
+                credentials: "same-origin",
+                headers: {'Content-Type': "application/json"},
+                body: JSON.stringify({message_tosearch:message_tosearch})
+            })
+            .then (response => {
+				if (response.status == 401){
+				 	document.getElementById('content').innerHTML = 'Not Logged In'
+			    }else{
+                    document.getElementById('content').innerHTML = 'Something has Failed'
+                }
+                return response.json()
+			})
+            .then (data => {
+                let idArray = data.ids
+                let str = ''
+                for (i=0;i<idArray.length;i++){
+                    str = str + idArray[i] + "<br >";
+                }
+                document.getElementById('id').innerHTML =  str;
+                $('#content').text(data.content)
+            })
+        }
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</html>

@@ -1,0 +1,22 @@
+FROM python:3.7.4-alpine3.10
+
+WORKDIR /application
+
+
+ARG UID=1000
+ARG GID=1000
+ENV DONTRUNBYTECODE = true
+RUN apk add --no-cache --virtual .build-deps g++ python3-dev libffi-dev openssl-dev pkgconfig bash gcc musl-dev mariadb-connector-c-dev && \
+    apk add --no-cache --update python3 && \
+     pip3 install --upgrade pip setuptools \
+    && addgroup -g "${GID}" flaskapp && adduser -S -G flaskapp -D -u "${UID}" flaskapp
+
+COPY requirements.txt .
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install -r requirements.txt
+COPY . . 
+RUN chown -R flaskapp:flaskapp /application
+RUN chmod +x "start.sh"
+USER flaskapp
+EXPOSE 5000
+ENTRYPOINT [ "/application/start.sh" ]

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<link rel="stylesheet" href="{{ url_for('static', filename='all.css') }}">
+        <title>DEMO TIMECAPSULE</title>
+	</head>
+<body>
+    <div class="form-container">
+    <div class="mockform">
+        <h1 style="text-align: center;">User View</h1>
+    <form action="javascript:register()" method="POST">
+        <label form="message_tosearch">Id:</label>
+        <input type="text" id="message_tosearch" name="message_tosearch" maxlength="10"><br><br>
+
+        <button type="submit" class=cv_btn id="sbmt">Submit</button>
+        <button class=cv_btn id="showids" onclick="change()">Showids</button>
+
+    </form>
+    <br>
+    <br>
+    <div id="appear"></div>
+    {% for id in ids %}
+        <div class="id" id="id">
+            {{id.id}}
+        </div>
+    {% endfor %}
+    <div id="content">
+        Message:{{ content }}
+    </div>
+    <br>
+    <button>Leave</button>
+    <br>
+    <br>
+    <div>DEMO:Only 100 Characters will be visible</div>
+    </div>
+    </div>
+</body>
+</html>
